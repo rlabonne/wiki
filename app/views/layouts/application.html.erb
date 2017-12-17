@@ -4,11 +4,25 @@
     <title>Wiki</title>
     <%= csrf_meta_tags %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Wiki</a>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About", welcome_about_path %></li>
+      </ul>
+    </div>
+  </nav>
+
   <body>
-    <%= yield %>
+    <div class="container">
+
+      <%= yield %>
+
+    </div>
   </body>
 </html>
