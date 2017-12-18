@@ -1,66 +1,11 @@
-<h1>Wiki</h1>
-<p>Welcome to the source of all knowledge.</p>
-<p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
------
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
------
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
------
-<br>
-<br>
-<br>
-<br>
-</p>
+<div class="jumbotron">
+  <% if user_signed_in? %>
+    <h1>Hi, <%= current_user.username %></h1>
+    <h2>We're glad to have you back.</h2>
+  <% else %>
+    <h1>Welcome to Wiki</h1>
+    <h2>Modern, minimal, sharable markdown wikis.</h2>
+    <p><br /></p>
+    <p><a class="btn btn-primary btn-lg sharp" href="/users/sign_up" role="button">Sign Up</a>  <a class="btn btn-info btn-lg sharp" href="/users/sign_in" role="button">Sign In</a></p>
+  <% end %>
+</div>

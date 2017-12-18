@@ -17,8 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// required for floating header
 body { padding-top: 70px; }
 
+// navbar customization
 .navbar-default {
   background-color: #35373a;
   border-color: #35373a;
@@ -71,6 +73,103 @@ body { padding-top: 70px; }
 }
 .navbar-default .navbar-link:hover {
   color: #9b59b6;
+}
+
+// button customization
+.btn.sharp {
+  border-radius:0;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #611BBD;
+  border-color: #611BBD;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: #49247A;
+  border-color: #611BBD;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #611BBD;
+  border-color: #611BBD;
+}
+
+.btn-primary .badge {
+  color: #611BBD;
+  background-color: #ffffff;
+}
+
+.btn-info {
+  color: #ffffff;
+  background-color: #333333;
+  border-color: #333333;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  color: #ffffff;
+  background-color: #120C0C;
+  border-color: #333333;
+}
+
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  background-image: none;
+}
+
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+.btn-info .badge {
+  color: #333333;
+  background-color: #ffffff;
 }
 
 @media (max-width: 767px) {
