@@ -1,10 +1,20 @@
-<h1>All Wikis</h1>
-<% @wikiis.each do |wikii| %>
-  <div class="media">
-    <div class="media-body">
-      <h4 class="media-heading">
-        <%= link_to wikii.title, wikii %>
-      </h4>
-    </div>
+<div class="page-header">
+  <h1>All Wikis
+  </h1>
+  <% if current_user %>
+    <%= link_to "New Wiki", new_wikii_path(@wikii), class: 'btn btn-success' %>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-md-10">
+    <% @wikiis.each do |wikii| %>
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to wikii.title, wikii %>
+          </h4>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

@@ -1,0 +1,23 @@
+<%= form_for [wikii] do |f| %>
+  <% if wikii.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(wikii.errors.count, "error") %>.</h4>
+      <ul>
+        <% wikii.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_group_tag(wikii.errors[:title]) do %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
+  <% end %>
+  <%= form_group_tag(wikii.errors[:body]) do %>
+    <%= f.label :body %>
+    <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter content" %>
+  <% end %>
+  <div class="form-group">
+    <%= f.submit "Save", class: 'btn btn-success' %>
+  </div>
+<% end %>
