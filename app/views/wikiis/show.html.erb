@@ -1,2 +1,16 @@
-<h1><%= @wikii.title %></h1>
-<p><%= @wikii.body %></p>
+<div>
+  <h1><%= @wikii.title %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <p><%= @wikii.body %></p>
+  </div>
+
+  <div class="col-md-4">
+    <% if current_user %>
+      <%= link_to "Edit", edit_wikii_path(@wikii), class: 'btn btn-success' %>
+      <%= link_to "Delete", @wikii, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this wiki?' } %>
+    <% end %>
+  </div>
+</div>
