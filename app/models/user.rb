@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  enum role: [:standard, :premium, :admin]
+  after_initialize :set_default_role, :if => :new_record?
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
@@ -7,6 +10,10 @@ class User < ApplicationRecord
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
+
+  def set_default_role
+    self.role ||= :standard
+  end
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
