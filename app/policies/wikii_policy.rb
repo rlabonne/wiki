@@ -1,0 +1,3 @@
+class WikiiPolicy < ApplicationPolicy
+
+end

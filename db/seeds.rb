@@ -15,7 +15,7 @@ users = User.all
 50.times do
   Wikii.create!(
     user: users.sample,
-    title:  RandomData.random_sentence,
+    title:  RandomData.random_word,
     body:   RandomData.random_paragraph,
     private: false
   )

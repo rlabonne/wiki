@@ -32,6 +32,7 @@ class WikiisController < ApplicationController
 
   def update
     @wikii = Wikii.find(params[:id])
+    authorize @wikii
     @wikii.title = params[:wikii][:title]
     @wikii.body = params[:wikii][:body]
     @wikii.user = current_user
@@ -47,6 +48,7 @@ class WikiisController < ApplicationController
 
   def destroy
     @wikii = Wikii.find(params[:id])
+    authorize @wikii
 
     if @wikii.destroy
       flash[:notice] = "\"#{@wikii.title}\" was deleted successfully."
