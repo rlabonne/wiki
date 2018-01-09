@@ -15,6 +15,7 @@ class WikiisController < ApplicationController
     @wikii = Wikii.new
     @wikii.title = params[:wikii][:title]
     @wikii.body = params[:wikii][:body]
+    @wikii.private = params[:wikii][:private]
     @wikii.user = current_user
 
     if @wikii.save

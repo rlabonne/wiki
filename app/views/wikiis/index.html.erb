@@ -12,9 +12,15 @@
     <% @wikiis.each do |wikii| %>
       <div class="media">
         <div class="media-body">
+          <% if wikii.private == true %>
+          <h4 class="media-heading">
+            <span class="glyphicon glyphicon-sunglasses"></span> <%= link_to wikii.title, wikii %>
+          </h4>
+          <% else %>
           <h4 class="media-heading">
             <%= link_to wikii.title, wikii %>
           </h4>
+          <% end %>
         </div>
       </div>
     <% end %>

@@ -18,7 +18,21 @@
 @import "bootstrap";
 
 // required for floating header
-body { padding-top: 70px; }
+body {
+  padding-top: 70px;
+  padding-bottom: 150px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  color: #9b59b6;
+  padding-top: 20px;
+  background-color: #333333;
+}
 
 // navbar customization
 .navbar-default {
