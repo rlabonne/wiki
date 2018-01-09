@@ -42,4 +42,10 @@ class ChargesController < ApplicationController
     redirect_to new_charge_path
   end
 
+  def downgrade_account
+    current_user.standard!
+    flash[:notice] = "Your account has been downgraded back to standard."
+    redirect_to root_path
+  end
+
 end

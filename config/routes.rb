@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :charges, only: [:new, :create]
+  resources :charges, only: [:new, :create] do
+    member do
+      get 'downgrade_account'
+    end
+  end
 
   resources :wikiis
 

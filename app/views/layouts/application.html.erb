@@ -25,7 +25,7 @@
               <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
               <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete  %></li>
               <li role="separator" class="divider"></li>
-              <% if current_user.role = "standard" %>
+              <% if current_user.standard? %>
                 <li><a href="/charges/new">Go Premium <span class="glyphicon glyphicon-flash"></span></a></li>
               <% else %>
                 <li><a href="#">Private Wikis <span class="glyphicon glyphicon-sunglasses"></span></a></li>
