@@ -2,6 +2,12 @@
   <% if user_signed_in? %>
     <h1>Hi, <%= current_user.username %></h1>
     <h2>We're glad to have you back.</h2>
+      <% if current_user.role == 'standard' %>
+        <h3>Have you considered upgrading to a <a href='/charges/new'>premium user</a>?</h3>
+      <% else %>
+        <h3>Here are your private wikis:</h3>
+        <p>index private wikis here</p>
+      <% end %>
   <% else %>
     <h1>Welcome to Wiki</h1>
     <h2>Modern, minimal, sharable markdown wikis.</h2>

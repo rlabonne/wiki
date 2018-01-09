@@ -53,3 +53,5 @@ gem 'figaro'
 gem 'pundit'
 
 gem 'faker'
+
+gem 'stripe'

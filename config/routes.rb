@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :charges, only: [:new, :create]
+
   resources :wikiis
 
   devise_for :users
