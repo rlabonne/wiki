@@ -1,7 +1,7 @@
 class ChargesController < ApplicationController
   def new
     # Amount in cents
-    @amount = 1000
+    @amount = 1500
 
     @stripe_btn_data = {
       key: "#{ Rails.configuration.stripe[:publishable_key] }",
@@ -12,7 +12,7 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 1000
+    @amount = 1500
 
     # Creates a Stripe Customer object, for associating
     # with the charge

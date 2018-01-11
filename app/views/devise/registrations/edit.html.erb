@@ -44,10 +44,10 @@
 <% end %>
 
 <% if current_user.premium? %>
-  <h3>Downgrade User</h3>
+  <h3>Downgrade Account</h3>
 
-  <p>Go back to a standard user and delete your private wikis.</p>
-    <%= link_to "Downgrade to Standard", downgrade_account_charge_path(current_user), class: 'btn btn-danger', data: {confirm: 'Are you sure you want to downgrade?' } %>
+  <p>Going back to a standard user will make your private wikis public.</p>
+    <%= link_to "Downgrade to Standard", downgrade_account_charge_path(current_user), class: 'btn btn-warning', data: {confirm: 'Are you sure you want to downgrade?' } %>
 <% end %>
 
 <h3>Delete Account</h3>

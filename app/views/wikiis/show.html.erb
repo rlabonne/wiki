@@ -7,10 +7,12 @@
 
     <div class="col-md-4">
       <div class="pull-right">
-        <% if current_user %></br></br>
+        <% if current_user %>
+          </br></br>
           <%= link_to "Edit", edit_wikii_path(@wikii), class: 'btn btn-success' %>
           <%= link_to "Delete", @wikii, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this wiki?' } %>
-        <% else %></br></br></br>
+        <% else %>
+          </br></br></br>
           <small><a href="/users/sign_up">Sign Up</a> or <a href="/users/sign_in">Sign In</a> to edit a Wiki</small>
         <% end %>
       </div>
