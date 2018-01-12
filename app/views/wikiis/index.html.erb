@@ -13,7 +13,7 @@
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
-            <% if wikii.private == true %>
+            <% if wikii.private %>
               <span class="glyphicon glyphicon-sunglasses"></span> <%= link_to wikii.title, wikii %>
             <% else %>
               <%= link_to wikii.title, wikii %>
