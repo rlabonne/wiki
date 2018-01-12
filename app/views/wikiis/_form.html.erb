@@ -17,7 +17,7 @@
     <%= f.label :body %>
     <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter content" %>
   <% end %>
-  <% if current_user.premium? %>
+  <% if current_user.premium? || current_user.admin? %>
     <%= form_group_tag(wikii.errors[:private]) do %>
       <%= f.label "Set Private" %>
       <%= f.check_box :private, class: 'form-control' %>

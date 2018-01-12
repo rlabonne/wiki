@@ -11,6 +11,8 @@ class User < ApplicationRecord
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
 
+  has_many :wikiis
+
   def set_default_role
     self.role ||= :standard
   end

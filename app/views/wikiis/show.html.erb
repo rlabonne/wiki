@@ -1,8 +1,12 @@
 <div class="page-header">
   <div class="row">
     <div class="col-md-8">
+      <% if @wikii.private? %>
+      <h1><span class="glyphicon glyphicon-sunglasses"></span> <%= @wikii.title %></h1>
+      <% else %>
       <h1><%= @wikii.title %></h1>
-      <small>Updated <%= time_ago_in_words(@wikii.updated_at) %> ago by <%= @wikii.user.username %></small>
+      <% end %>
+      <small>Created <%= time_ago_in_words(@wikii.created_at) %> ago by <%= @wikii.user.username %>.</small>
     </div>
 
     <div class="col-md-4">

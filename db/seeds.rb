@@ -2,7 +2,7 @@ require 'faker'
 
 # Create Standard User
 user = User.new(
-  :username => Faker::Name.unique.first_name,
+  :username => 'standard',
   :email => Faker::Internet.unique.email,
   :password => 'password',
   :password_confirmation => 'password',
@@ -14,7 +14,7 @@ users = User.all
 
 # Create Admin User
 user = User.new(
-  :username => Faker::Name.unique.first_name,
+  :username => 'admin',
   :email => Faker::Internet.unique.email,
   :password => 'password',
   :password_confirmation => 'password',
@@ -26,7 +26,7 @@ users = User.all
 
 # Create Premium User
 user = User.new(
-  :username => Faker::Name.unique.first_name,
+  :username => 'premium',
   :email => Faker::Internet.unique.email,
   :password => 'password',
   :password_confirmation => 'password',
@@ -35,14 +35,25 @@ user = User.new(
 user.skip_confirmation!
 user.save!
 users = User.all
+third = User.third
 
 # Create Wikis
-50.times do
+15.times do
   Wikii.create!(
     user: users.sample,
     title:  Faker::Dog.breed,
     body:   Faker::Dog.meme_phrase,
     private: false
+  )
+end
+wikkis = Wikii.all
+
+15.times do
+  Wikii.create!(
+    user: third,
+    title:  Faker::Dog.breed,
+    body:   Faker::Dog.meme_phrase,
+    private: true
   )
 end
 wikkis = Wikii.all

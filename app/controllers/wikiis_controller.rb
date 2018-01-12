@@ -1,6 +1,9 @@
 class WikiisController < ApplicationController
+  include Pundit
+  protect_from_forgery
+
   def index
-    @wikiis = Wikii.all
+    @wikiis = policy_scope(Wikii.all)
   end
 
   def show
@@ -36,7 +39,7 @@ class WikiisController < ApplicationController
     authorize @wikii
     @wikii.title = params[:wikii][:title]
     @wikii.body = params[:wikii][:body]
-    @wikii.user = current_user
+    @wikii.private = params[:wikii][:private]
 
     if @wikii.save
       flash[:notice] = "Wiki was updated."
