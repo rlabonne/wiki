@@ -41,16 +41,4 @@ class ChargesController < ApplicationController
     flash[:alert] = e.message
     redirect_to new_charge_path
   end
-
-  def downgrade_account
-    current_user.standard!
-    current_user.wikiis.each do |wikii|
-      if wikii.private?
-        wikii.update :private => false
-      end
-    end
-    flash[:notice] = "Your account has been downgraded back to standard."
-    redirect_to root_path
-  end
-
 end
