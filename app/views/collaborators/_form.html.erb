@@ -1,0 +1,8 @@
+<% if @wikii.private %>
+  <%= form_for [wikii, Collaborator.new] do |f| %>
+    Add Collaborators using their email address
+     <%= f.text_field :user, placeholder: "User email address" %>
+
+     <%= f.submit "Save", class: 'btn btn-success' %>
+  <% end %>
+<% end %>

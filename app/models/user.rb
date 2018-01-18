@@ -11,7 +11,9 @@ class User < ApplicationRecord
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
 
-  has_many :wikiis
+  has_many :wikiis, dependent: :destroy
+  has_many :collaborators
+  has_many :wiki_collabs, source: 'wiki', through: :collaborators
 
   def set_default_role
     self.role ||= :standard
